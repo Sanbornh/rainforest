@@ -27,9 +27,16 @@ class ProductsController < ApplicationController
 
   def update
   	@product = Product.find(params[:id])
-  	
+
+    # Problem seems to be happening when
+    # the new attributes are added to the table
+    # because they are getting converted to an int
+    # and the decimals are getting truncated
+    # To fix, method needs to get called before attributes
+    # are stored saved to the table.
   	if @product.update_attributes(product_params)
-  		redirect_to product_path(@product)
+
+  		redirect_to products_path
   	else 
   		render :edit
   	end
@@ -43,7 +50,7 @@ class ProductsController < ApplicationController
 
   private 
   def product_params
-  	params.require(:product).premit(:name, :description, :price_in_cents)
+  	params.require(:product).permit(:name, :description, :price_in_cents)
   end
 
 end

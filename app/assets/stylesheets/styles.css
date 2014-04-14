@@ -1,0 +1,21 @@
+h1 {
+	font-family: sans-serif;
+	font-size: 2em;
+
+}
+
+h2 {
+	font-family: sans-serif;
+	font-size: 1.3em;
+
+}
+
+
+.product {
+	height:200px;
+	width: 200px;
+	border: 2px solid black;
+	display: inline-block;
+	margin: 5px;
+
+}

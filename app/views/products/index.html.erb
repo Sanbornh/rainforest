@@ -1,2 +1,12 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<h1> PRODUCTS </h1>
+	<% @products.each do |product| %>
+	<div class="product">
+		<h2><%= product.name %></h2>
+		<ul>
+			<li><%= product.description %></li>
+			<li>$<%= sprintf "%.2f", (product.price_in_cents * 0.01).round(2) %></li>
+		</ul>
+	</div>
+<%end%>
+
+<%= link_to "Add a Product", new_product_path %>

@@ -1,0 +1,12 @@
+<%= form_for @product do |f| %>
+	<%= f.label "name"  %>
+	<%= f.text_field "name" %><br>
+
+	<%= f.label "description" %><br>
+	<%= f.text_area(:description, size: '25x25') %>
+
+	<%= f.label :name, "Price" %><br>
+	<%= f.text_field "price_in_cents" %>
+
+	<%= f.submit "Submit" %>
+<%end%>
