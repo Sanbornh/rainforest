@@ -1,2 +1,11 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+
+<div class="product">
+	<h2><%= @product.name %></h2>
+	<ul>
+		<li><%= @product.description %></li>
+		<li>$<%= sprintf "%.2f", (@product.price_in_cents * 0.01).round(2) %></li>
+	</ul>
+</div>
+
+<%= link_to "Home", products_path %>
+<%= link_to "Add Another Product", new_product_path %>
