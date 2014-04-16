@@ -3,7 +3,7 @@
 	<h2><%= @product.name %></h2>
 	<ul>
 		<li><%= @product.description %></li>
-		<li>$<%= sprintf "%.2f", (@product.price_in_cents * 0.01).round(2) %></li>
+		<li>$<%= formatted_price %></li>
 	</ul>
 </div>
 
