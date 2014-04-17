@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
   	@review = Review.find(params[:id])
   end
 
-  def new
+  def create
   	@review = @product.reviews.build(review_params)
   	@review.user_id = current_user.id
 
@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-
+  	params.require(:review).permit(:comment, :product_id)
   end
 
   def load_product
